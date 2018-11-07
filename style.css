@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "Helvetica Neue Thin";
+  src: url("fonts/da266c3a-a094-4adc-a81e-12f73609ba16.eot?#iefix");
+  src: url("fonts/da266c3a-a094-4adc-a81e-12f73609ba16.eot?#iefix") format("eot"), url("fonts/7d63ccf8-e0ae-4dee-ad4d-bbc798aa5803.woff2") format("woff2"), url("fonts/b2c1327f-ab3d-4230-93d7-eee8596e1498.woff") format("woff"), url("fonts/922917a9-4ca8-4c0b-b1bb-417b6ff0210e.ttf") format("truetype");
+}
+@font-face {
   font-family: "Helvetica Neue";
   src: url("fonts/522972a6-5867-47ae-82fc-a7cf9bd5d4d4.eot?#iefix");
   src: url("fonts/522972a6-5867-47ae-82fc-a7cf9bd5d4d4.eot?#iefix") format("eot"), url("fonts/08b57253-2e0d-4c12-9c57-107f6c67bc49.woff2") format("woff2"), url("fonts/08edde9d-c27b-4731-a27f-d6cd9b01cd06.woff") format("woff"), url("fonts/8f4a1705-214a-4dd0-80b8-72252c37e688.ttf") format("truetype");
@@ -13,6 +18,11 @@
   src: url("fonts/9697cfef-7816-47cc-81ed-c56c029d3bcf.eot?#iefix");
   src: url("fonts/9697cfef-7816-47cc-81ed-c56c029d3bcf.eot?#iefix") format("eot"), url("fonts/1f4274cd-2674-481e-9023-69e33ffca161.woff2") format("woff2"), url("fonts/5e8d493c-be01-44b9-962e-504a5cf10dd8.woff") format("woff"), url("fonts/ae36b4a0-aa2c-46cc-98d8-d8b7d22241dc.ttf") format("truetype");
 }
+.navbar__link {
+  font-family: "Helvetica Neue Thin", "Helvetica", sans-serif;
+  letter-spacing: 0.1em;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -28,6 +38,88 @@ h6 {
   font-weight: 400;
 }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after {
+  content: "";
+  content: none;
+}
+
+q::before, q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+a {
+  color: #d71921;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -36,30 +128,113 @@ h6 {
   position: relative;
   width: 100%;
 }
+.container--fluid {
+  max-width: 100%;
+}
 
 .section {
   padding-bottom: 30px;
   padding-top: 30px;
 }
 
+.header__brand {
+  text-align: center;
+}
+.header__brand img {
+  max-width: 100%;
+}
+.header__separator {
+  background-color: #d71921;
+  height: 3px;
+  width: 100%;
+}
+.header__nav {
+  margin-top: 30px;
+}
+
+.navbar__toggler {
+  font-size: 30px;
+  font-size: 3rem;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navbar__nav {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: 0.3s max-height ease;
+}
+.navbar__item {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 15px;
+  padding-top: 5px;
+}
+.navbar__link {
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: #000;
+}
+.navbar__link:hover {
+  color: #d71921;
+}
+
 @media screen and (min-width: 576px) {
   .container {
     max-width: 540px;
+  }
+  .container--fluid {
+    max-width: 100%;
   }
 }
 @media screen and (min-width: 768px) {
   .container {
     max-width: 720px;
   }
+  .container--fluid {
+    max-width: 100%;
+  }
+
+  .header__brand {
+    text-align: left;
+  }
+
+  .navbar__toggler {
+    display: none;
+  }
+  .navbar__nav {
+    align-items: center;
+    flex-direction: row;
+    max-height: unset !important;
+  }
+  .navbar__item {
+    padding-bottom: 5px;
+  }
 }
 @media screen and (min-width: 992px) {
   .container {
     max-width: 960px;
   }
+  .container--fluid {
+    max-width: 100%;
+  }
 }
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+  .container--fluid {
+    max-width: 100%;
   }
 }
 

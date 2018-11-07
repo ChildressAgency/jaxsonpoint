@@ -28,8 +28,30 @@
 </head>
 <body>
     
-    <header>
-        
+    <header class="header">
+        <div class="section">
+            <div class="container container--fluid">
+                <div class="header__brand">
+                    <?php $logo = get_field( 'header_logo', 'option' ); ?>
+                    <img src="<?php echo $logo['url']; ?>" alt="<?php if( $logo['alt'] ) echo $logo['alt']; else echo $logo['title']; ?>">
+                </div>
+                <nav class="navbar header__nav">
+                    <button class="navbar__toggler" type="button" data-target="#main-menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <div class="" id="main-menu">
+                        <?php 
+                        wp_nav_menu( array(
+                            'theme_location'    =>  'main_menu',
+                            'menu_class'        =>  'navbar__nav',
+                            'walker'            =>  new Custom_Nav_Walker()
+                        ) ); ?>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="header__separator"></div>
     </header>
 
     <main>

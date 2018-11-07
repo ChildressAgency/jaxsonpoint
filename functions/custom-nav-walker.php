@@ -17,7 +17,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
 
         // if the current menu item has a parent, then it is a dropdown item
         if( $parent ){
-            $output .= "<a class=\"dropdown-item";
+            $output .= "<a class=\"navbar__dropdown-item";
 
             // if this item goes to this page, then highlight it
             // if( $objectID == $pageID )
@@ -27,7 +27,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
             $output .= $title;
             $output .= "</a>";
         } else {
-            $output .= "<li class=\"nav-item";
+            $output .= "<li class=\"navbar__item";
 
             // if this item has children, then it is a dropdown menu
             if( $hasChildren )
@@ -46,7 +46,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
                 $output .= "<a href=\"#\" class=\"nav-link dropdown-toggle\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">";
             }
             else{
-                $output .= "<a href=\"" . $permalink . "\" class=\"nav-link\">";
+                $output .= "<a href=\"" . $permalink . "\" class=\"navbar__link\">";
             }
 
             // item title and close the tag

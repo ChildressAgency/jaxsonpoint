@@ -1,7 +1,16 @@
 @import _variables.sass
+@import _reset.sass
+
+///////////////////////////////////////////////////////////////////////////////
+// TAGS                                                                      //
+///////////////////////////////////////////////////////////////////////////////
+
+html
+    font-size: 62.5%
 
 body
     @extend %font-open-sans
+    +font-size(16)
 
 h1,
 h2,
@@ -10,9 +19,20 @@ h4,
 h5,
 h6
     @extend %font-minion-pro
+    margin-bottom: 15px
+
+p
+    margin-bottom: 15px
+
+a
+    color: $color-primary
+    text-decoration: none
+
+    &:hover
+        text-decoration: underline
 
 ///////////////////////////////////////////////////////////////////////////////
-// Reusable                                                                  //
+// REUSABLE                                                                  //
 ///////////////////////////////////////////////////////////////////////////////
 
 .container
@@ -23,8 +43,68 @@ h6
     position: relative
     width: 100%
 
+    &--fluid
+        max-width: 100%
+
 .section
     padding-bottom: 30px
     padding-top: 30px
+
+///////////////////////////////////////////////////////////////////////////////
+// HEADER                                                                    //
+///////////////////////////////////////////////////////////////////////////////
+
+.header
+    &__brand
+        text-align: center
+
+        img
+            max-width: 100%
+
+    &__separator
+        background-color: $color-primary
+        height: 3px
+        width: 100%
+
+    &__nav
+        margin-top: 30px
+
+.navbar
+    &__toggler
+        +font-size(30)
+        background-color: transparent
+        border: 0
+        cursor: pointer
+        display: block
+        margin-bottom: 15px
+        margin-left: auto
+        margin-right: auto
+
+    &__nav
+        align-items: flex-start
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        max-height: 0
+        overflow: hidden
+        padding-left: 5px
+        padding-right: 5px
+        transition: .3s max-height ease
+
+    &__item
+        margin-left: 20px
+        margin-right: 20px
+        padding-bottom: 15px
+        padding-top: 5px
+
+    &__link
+        @extend %font-helvetica-thin
+        +font-size(18)
+        color: $color-black
+
+        &:hover
+            color: $color-primary
+
+
 
 @import _responsive.sass
