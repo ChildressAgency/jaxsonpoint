@@ -117,6 +117,30 @@ div
 // CONTENT                                                                   //
 ///////////////////////////////////////////////////////////////////////////////
 
+.aligncenter
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+.alignleft
+    float: left
+    margin-bottom: 5px
+    margin-right: 15px
+    margin-top: 5px
+
+.alignright
+    float: right
+    margin-bottom: 5px
+    margin-left: 15px
+    margin-top: 5px
+
+.alignleft,
+.alignright
+    &::after
+        clear: both
+        content: ' '
+        display: table
+
 .container
     margin-left: auto
     margin-right: auto
@@ -125,12 +149,34 @@ div
     position: relative
     width: 100%
 
+    &::after
+        clear: both
+        content: ' '
+        display: table
+
     &--fluid
         max-width: 100%
+
+    &--thin
+        width: 100%
 
 .section
     padding-bottom: 30px
     padding-top: 30px
+
+    &::after
+        clear: both
+        content: ' '
+        display: table
+
+.section-heading
+    @extend %font-open-sans-bold
+    +font-size(66)
+    text-align: center
+
+.bigtext
+    @extend %font-minion-pro
+    font-size: 3em
 
 .btn
     +font-size(26)
@@ -163,6 +209,41 @@ div
         justify-content: flex-end
         padding: 30px
         width: 100%
+
+.link-grid
+    display: grid
+    grid-gap: 30px 15px
+    grid-template-columns: repeat(3, 1fr)
+
+    &__heading
+        color: $color-text-dark
+
+    &__item
+        &:hover
+            text-decoration: none
+
+            .link-grid__title
+                @extend %font-helvetica-medium
+
+            img
+                transform: scale(1.3)
+
+        &--tall
+            grid-row: span 2
+
+    &__image
+        overflow: hidden
+
+        img
+            display: block
+            transition: 5s transform linear
+
+    &__title
+        @extend %font-helvetica
+        +font-size(30)
+        border-bottom: 2px solid $color-primary
+        color: $color-black
+        text-align: center
 
 
 ///////////////////////////////////////////////////////////////////////////////
