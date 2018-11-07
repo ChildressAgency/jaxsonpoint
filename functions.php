@@ -59,6 +59,7 @@
 	function load_fonts() {
 		wp_enqueue_style( 'font-awesome', '//use.fontawesome.com/releases/v5.3.1/css/all.css' );
 		wp_enqueue_style( 'open-sans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' );
+		wp_enqueue_style( 'minion-pro', 'https://use.typekit.net/ihf6tfg.css' );
 	}
 	add_action( 'wp_enqueue_scripts', 'load_fonts' );
 
