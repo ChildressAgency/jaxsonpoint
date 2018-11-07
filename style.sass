@@ -11,6 +11,7 @@ html
 body
     @extend %font-open-sans
     +font-size(16)
+    line-height: 1.5
 
 h1,
 h2,
@@ -21,6 +22,24 @@ h6
     @extend %font-minion-pro
     margin-bottom: 15px
 
+h1
+    +font-size(32)
+
+h2
+    +font-size(28)
+
+h3
+    +font-size(26)
+
+h4
+    +font-size(24)
+
+h5
+    +font-size(22)
+
+h6
+    +font-size(20)
+
 p
     margin-bottom: 15px
 
@@ -30,6 +49,13 @@ a
 
     &:hover
         text-decoration: underline
+
+img
+    max-width: 100%
+
+div
+    background-position: center center
+    background-size: cover
 
 ///////////////////////////////////////////////////////////////////////////////
 // REUSABLE                                                                  //
@@ -69,6 +95,15 @@ a
     &__nav
         margin-top: 30px
 
+    .navbar
+        &__link
+            @extend %font-helvetica-thin
+            +font-size(18)
+            color: $color-black
+
+            &:hover
+                color: $color-primary
+
 .navbar
     &__toggler
         +font-size(30)
@@ -97,14 +132,64 @@ a
         padding-bottom: 15px
         padding-top: 5px
 
-    &__link
-        @extend %font-helvetica-thin
-        +font-size(18)
-        color: $color-black
 
-        &:hover
-            color: $color-primary
+///////////////////////////////////////////////////////////////////////////////
+// FOOTER                                                                    //
+///////////////////////////////////////////////////////////////////////////////
 
+.footer
+    align-items: center
+    background-color: $color-dark
+    color: $color-white
+    display: flex
+    flex-direction: column
+    padding: 30px 0
 
+    &__info
+        align-items: center
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        margin-bottom: 60px
+        padding: 0 15px
+        width: 100%
+
+    &__contact
+        i
+            +font-size(30)
+
+        a
+            color: $color-white
+
+            &:hover
+                color: $color-primary
+                text-decoration: none
+
+    &__heading
+        @extend %font-open-sans-semibold
+
+    &__nav
+        border-bottom: 3px solid $color-primary
+        display: inline-block
+        padding: 0 15px
+
+    &__copyright
+        margin-top: 30px
+        padding: 0 30px
+        text-align: center
+        width: 100%
+
+    .navbar
+        &__nav
+            align-items: center
+            max-height: unset
+
+        &__link
+            @extend %font-open-sans-bold
+            +font-size(22)
+            color: $color-white
+
+            &:hover
+                color: $color-primary
 
 @import _responsive.sass
