@@ -10,10 +10,6 @@ if( $hero ): ?>
 </div>
 <?php endif; ?>
 
-<div class="section">
-    <div class="container">
-        <?php get_template_part( 'partials/tp-flexible' ); ?>
-    </div>
-</div>
+<?php get_template_part( 'partials/tp-flexible' ); ?>
 
 <?php get_footer(); ?>
