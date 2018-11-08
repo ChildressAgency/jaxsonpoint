@@ -171,7 +171,7 @@ div
 
 .section-heading
     @extend %font-open-sans-bold
-    +font-size(66)
+    +font-size(50)
     text-align: center
 
 .bigtext
@@ -212,12 +212,16 @@ div
 .link-grid
     display: grid
     grid-gap: 30px 15px
-    grid-template-columns: repeat(3, 1fr)
+    // grid-template-columns: repeat(3, 1fr)
+    grid-template-columns: 1fr
 
     &__heading
         color: $color-text-dark
 
     &__item
+        display: flex
+        flex-direction: column
+
         &:hover
             text-decoration: none
 
@@ -231,17 +235,21 @@ div
             grid-row: span 2
 
     &__image
+        flex: 1
         overflow: hidden
 
         img
             display: block
+            height: 100%
             transition: 5s transform linear
+            width: 100%
 
     &__title
         @extend %font-helvetica
         +font-size(30)
         border-bottom: 2px solid $color-primary
         color: $color-black
+        margin-bottom: 0
         text-align: center
 
 
