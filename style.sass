@@ -202,6 +202,7 @@ div
     position: relative
 
     &__text
+        @extend %font-minion-pro
         +font-size(55)
         color: $color-white
         line-height: .8
@@ -276,31 +277,103 @@ div
     &__item
         padding: 5px
 
-    &__next,
-    &__prev
+        &.slick-slide
+            align-items: center
+
+    &__prev,
+    &__next
         +font-size(60)
         color: $color-black
         position: absolute
         top: 50%
 
-    &__next
-        right: 0
-        transform: translate(100%, -50%)
-
     &__prev
         left: 0
         transform: translate(-100%, -50%)
 
+    &__next
+        right: 0
+        transform: translate(100%, -50%)
+
+    .slick-track
+        align-items: center
+
 .slick-initialized
     .slick-slide
-        align-items: center
         display: flex
+        flex-direction: column
         justify-content: center
 
 .slick-slider
     .slick-track
-        align-items: center
         display: flex
+
+.slick-arrow
+    cursor: pointer
+
+.featured-heading
+    background-color: $color-black
+    color: $color-white
+    margin-bottom: -200px
+    padding-bottom: 300px
+    padding-top: 100px
+
+    &::after
+        display: none
+
+.featured-slider
+    &__item
+        @extend %font-helvetica
+        padding: 0 15px
+
+    &__title
+        @extend %font-helvetica-medium
+        +font-size(20)
+        font-weight: normal
+        margin-bottom: 10px
+        margin-top: 15px
+        padding-bottom: 10px
+        position: relative
+
+        &::after
+            background-color: $color-primary
+            bottom: 0
+            content: ' '
+            height: 2px
+            left: 0
+            position: absolute
+            width: 80%
+
+    &__location
+        +font-size(20)
+        color: $color-text-grey
+
+    &__description
+        +font-size(18)
+
+    &__prev,
+    &__next
+        +font-size(60)
+        align-items: center
+        background-color: $color-slick-arrow-bg
+        border-radius: 50%
+        color: $color-primary
+        display: flex
+        height: 100px
+        justify-content: center
+        position: absolute
+        top: 200px
+        width: 100px
+        z-index: 50
+
+    &__prev
+        left: 0
+        transform: translateX(-25%)
+
+    &__next
+        right: 0
+        transform: translateX(25%)
+
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -308,6 +381,7 @@ div
 ///////////////////////////////////////////////////////////////////////////////
 
 .footer
+    @extend %font-open-sans
     align-items: center
     background-color: $color-dark
     color: $color-white

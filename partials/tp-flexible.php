@@ -15,6 +15,9 @@ if( have_rows('flexible_content') ):
         elseif( get_row_layout() == 'client_slider' ):
             get_template_part( 'partials/tp-client-slider' );
 
+        elseif( get_row_layout() == 'featured_projects' ):
+            get_template_part( 'partials/tp-featured' );
+
         endif;
 
     endwhile;
