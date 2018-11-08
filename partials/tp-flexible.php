@@ -12,6 +12,9 @@ if( have_rows('flexible_content') ):
         elseif( get_row_layout() == 'link_grid' ):
             get_template_part( 'partials/tp-link-grid' );
 
+        elseif( get_row_layout() == 'client_slider' ):
+            get_template_part( 'partials/tp-client-slider' );
+
         endif;
 
     endwhile;

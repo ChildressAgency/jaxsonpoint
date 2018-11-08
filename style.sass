@@ -9,7 +9,7 @@ html
     font-size: 62.5%
 
 body
-    @extend %font-open-sans
+    @extend %font-minion-pro
     +font-size(16)
     line-height: 1.5
 
@@ -19,7 +19,7 @@ h3,
 h4,
 h5,
 h6
-    @extend %font-minion-pro
+    @extend %font-open-sans-bold
     margin-bottom: 15px
 
 h1
@@ -170,9 +170,20 @@ div
         display: table
 
 .section-heading
-    @extend %font-open-sans-bold
     +font-size(50)
+    margin-bottom: 30px
+    position: relative
     text-align: center
+
+    &::after
+        background-color: $color-primary
+        bottom: 0
+        content: ' '
+        height: 3px
+        left: 50%
+        position: absolute
+        transform: translateX(-50%)
+        width: 100%
 
 .bigtext
     @extend %font-minion-pro
@@ -212,11 +223,13 @@ div
 .link-grid
     display: grid
     grid-gap: 30px 15px
-    // grid-template-columns: repeat(3, 1fr)
     grid-template-columns: 1fr
 
     &__heading
         color: $color-text-dark
+
+        &::after
+            display: none
 
     &__item
         display: flex
@@ -251,6 +264,43 @@ div
         color: $color-black
         margin-bottom: 0
         text-align: center
+
+.client-slider-text
+    +font-size(32)
+
+.client-slider
+    margin: 0 auto
+    position: relative
+    width: 80%
+
+    &__item
+        padding: 5px
+
+    &__next,
+    &__prev
+        +font-size(60)
+        color: $color-black
+        position: absolute
+        top: 50%
+
+    &__next
+        right: 0
+        transform: translate(100%, -50%)
+
+    &__prev
+        left: 0
+        transform: translate(-100%, -50%)
+
+.slick-initialized
+    .slick-slide
+        align-items: center
+        display: flex
+        justify-content: center
+
+.slick-slider
+    .slick-track
+        align-items: center
+        display: flex
 
 
 ///////////////////////////////////////////////////////////////////////////////

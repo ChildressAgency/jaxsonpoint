@@ -25,6 +25,13 @@
     .section-heading
         +font-size(66)
 
+        &::after
+            width: 50%
+
+    .client-slider
+        margin: 0
+        width: auto
+
 ///////////////////////////////////////////////////////////////////////////////
 // 768                                                                       //
 ///////////////////////////////////////////////////////////////////////////////
@@ -68,8 +75,23 @@
             .btn
                 margin-left: 12rem
 
+    .section-heading
+        &::after
+            width: 300px
+
     .link-grid
         grid-template-columns: repeat(3, 1fr)
+
+    .client-slider
+        &__next,
+        &__prev
+            +font-size(66)
+
+        &__next
+            transform: translate(150%, -50%)
+
+        &__prev
+            transform: translate(-150%, -50%)
 
     .footer
         align-items: flex-end
