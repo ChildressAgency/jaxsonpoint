@@ -17,31 +17,31 @@
 	function jaxson_scripts(){
 		global $wp_query;
 		wp_register_script(
-			'jaxson-script', 
-			'/wp-content/themes/jaxsonpoint/js/jaxson-script.js', 
-			array('jquery'), 
-			'', 
-			true
-		);
-		wp_register_script(
 			'slick-script', 
 			'//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', 
 			array('jquery'), 
 			'', 
 			true
 		);
-
+		wp_register_script(
+			'jaxson-script', 
+			'/wp-content/themes/jaxsonpoint/js/jaxson-script.js', 
+			array('jquery'), 
+			'', 
+			true
+		);
+		
 		wp_enqueue_script( 'jaxson-script' );
 		wp_enqueue_script( 'slick-script' );
 	}
 	add_action('wp_enqueue_scripts', 'jaxson_scripts', 100);
 	
 	function jaxson_styles(){
-		wp_register_style('jaxson', get_template_directory_uri() . '/style.css');
 		wp_register_style('slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
+		wp_register_style('jaxson', get_template_directory_uri() . '/style.css');
 
-		wp_enqueue_style('jaxson');
 		wp_enqueue_style('slick');
+		wp_enqueue_style('jaxson');
 	}
 	add_action('wp_enqueue_scripts', 'jaxson_styles');
 
