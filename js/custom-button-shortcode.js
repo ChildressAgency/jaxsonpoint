@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
         init : function(ed, url) {
             // Setup the command when the button is pressed
             ed.addCommand('noa_custom_insert_button', function() {
-                content = '[button link="#" type="1"]TEXT[/button]';
+                content = '[button link="#"]TEXT[/button]';
                 tinymce.execCommand('mceInsertContent', false, content);
             });
             //Add Button to Visual Editor Toolbar and launch the above command when it is clicked.

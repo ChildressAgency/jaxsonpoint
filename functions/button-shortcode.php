@@ -23,7 +23,7 @@ function button_function( $atts, $content = null ) {
     if( $type && $type == '2')
         $return_string .= '" class="btn btn-secondary">';
     else
-        $return_string .= '" class="btn btn-primary">';
+        $return_string .= '" class="btn btn--primary">';
 
     // button text
     if( $content )
