@@ -278,8 +278,8 @@ div {
 }
 
 .section {
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 60px;
+  padding-top: 60px;
   position: relative;
 }
 .section::after {
@@ -582,6 +582,18 @@ div {
   padding-top: 0;
 }
 
+.customers {
+  display: grid;
+  grid-gap: 60px 30px;
+  grid-template-columns: 1fr;
+}
+
+.customer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .footer {
   align-items: center;
   background-color: #1f1f1f;
@@ -680,6 +692,10 @@ div {
   .client-slider {
     margin: 0;
     width: auto;
+  }
+
+  .customers {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (min-width: 768px) {
