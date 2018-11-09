@@ -42,7 +42,7 @@
             max-width: 100%
 
         &--thin
-            width: 80%
+            max-width: 576px
 
     .header
         &__brand
@@ -90,6 +90,17 @@
         &__prev
             transform: translate(-150%, -50%)
 
+    .services
+        & .container
+            flex-direction: row
+
+    .service
+        &:first-of-type
+            margin-bottom: 0
+
+        &:last-of-type
+            margin-left: 30px
+
     .footer
         align-items: flex-end
 
@@ -120,6 +131,9 @@
         &--fluid
             max-width: 100%
 
+        &--thin
+            max-width: 793px
+
     .hero
         &__text
             +font-size(100)
@@ -127,6 +141,10 @@
         &__content
             .btn
                 margin-left: 15rem
+
+    .service
+        &:last-of-type
+            margin-left: 60px
 
     .footer
         &__info
@@ -145,3 +163,6 @@
 
         &--fluid
             max-width: 100%
+
+        &--thin
+            max-width: 960px

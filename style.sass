@@ -390,6 +390,70 @@ div
         right: 0
         transform: translateX(25%)
 
+.services
+    padding-bottom: 60px
+    padding-top: 60px
+
+    &--dark
+        background-color: $color-black
+
+        color: $color-white
+
+    & .container
+        display: flex
+        flex-direction: column
+
+.service
+    display: flex
+    flex: 1
+    flex-direction: column
+
+    &__image
+        width: 100%
+
+    &__title
+        +font-size(32)
+        margin-bottom: 30px
+        margin-top: 15px
+        padding-bottom: 15px
+        position: relative
+
+        &::after
+            background-color: $color-primary
+            bottom: 0
+            content: ' '
+            height: 3px
+            left: 0
+            position: absolute
+            width: 80%
+
+    &__text
+        +font-size(26)
+        margin-bottom: 30px
+
+    &__link
+        @extend %font-helvetica-medium
+        +font-size(24)
+        margin-top: auto
+        text-align: right
+
+    &:first-of-type
+        margin-bottom: 30px
+
+.featured-services
+    &__top-bar
+        background-color: $color-white
+        height: 300px
+        margin-bottom: -150px
+
+    &__content
+        background-color: $color-black
+
+    &__image
+        width: 100%
+
+    .services
+        padding-top: 0
 
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -27,7 +27,7 @@
   letter-spacing: 0.1em;
 }
 
-.featured-slider__title, .link-grid__item:hover .link-grid__title {
+.service__link, .featured-slider__title, .link-grid__item:hover .link-grid__title {
   font-family: "Helvetica Neue Medium", "Helvetica", sans-serif;
 }
 
@@ -514,6 +514,74 @@ div {
   transform: translateX(25%);
 }
 
+.services {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+.services--dark {
+  background-color: #000;
+  color: #fff;
+}
+.services .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.service {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.service__image {
+  width: 100%;
+}
+.service__title {
+  font-size: 32px;
+  font-size: 3.2rem;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+}
+.service__title::after {
+  background-color: #d71921;
+  bottom: 0;
+  content: " ";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 80%;
+}
+.service__text {
+  font-size: 26px;
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+}
+.service__link {
+  font-size: 24px;
+  font-size: 2.4rem;
+  margin-top: auto;
+  text-align: right;
+}
+.service:first-of-type {
+  margin-bottom: 30px;
+}
+
+.featured-services__top-bar {
+  background-color: #fff;
+  height: 300px;
+  margin-bottom: -150px;
+}
+.featured-services__content {
+  background-color: #000;
+}
+.featured-services__image {
+  width: 100%;
+}
+.featured-services .services {
+  padding-top: 0;
+}
+
 .footer {
   align-items: center;
   background-color: #1f1f1f;
@@ -622,7 +690,7 @@ div {
     max-width: 100%;
   }
   .container--thin {
-    width: 80%;
+    max-width: 576px;
   }
 
   .header__brand {
@@ -671,6 +739,17 @@ div {
     transform: translate(-150%, -50%);
   }
 
+  .services .container {
+    flex-direction: row;
+  }
+
+  .service:first-of-type {
+    margin-bottom: 0;
+  }
+  .service:last-of-type {
+    margin-left: 30px;
+  }
+
   .footer {
     align-items: flex-end;
   }
@@ -698,6 +777,9 @@ div {
   .container--fluid {
     max-width: 100%;
   }
+  .container--thin {
+    max-width: 793px;
+  }
 
   .hero__text {
     font-size: 100px;
@@ -705,6 +787,10 @@ div {
   }
   .hero__content .btn {
     margin-left: 15rem;
+  }
+
+  .service:last-of-type {
+    margin-left: 60px;
   }
 
   .footer__info {
@@ -720,6 +806,9 @@ div {
   }
   .container--fluid {
     max-width: 100%;
+  }
+  .container--thin {
+    max-width: 960px;
   }
 }
 
