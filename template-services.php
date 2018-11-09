@@ -23,9 +23,7 @@ get_header(); ?>
         <div class="featured-services__top-bar"></div>
         <?php 
         if( have_rows( 'featured_services' ) ): while( have_rows( 'featured_services' ) ): the_row();
-        // $services = get_field( 'featured_services' ); 
-        // $image = $services['image']; 
-        $image = get_sub_field( 'image' ); ?>
+            $image = get_sub_field( 'image' ); ?>
             <div class="container container--thin">
                 <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt']; ?>" class="featured-services__image">
             </div>
