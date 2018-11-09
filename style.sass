@@ -163,6 +163,7 @@ div
 .section
     padding-bottom: 30px
     padding-top: 30px
+    position: relative
 
     &::after
         clear: both
@@ -188,6 +189,18 @@ div
 .bigtext
     @extend %font-minion-pro
     font-size: 3em
+
+.medtext
+    @extend %font-minion-pro
+    font-size: 2em
+
+.white-gradient-overlay
+    background: linear-gradient(rgba(255, 255, 255, .8), transparent)
+    height: 100%
+    left: 0
+    position: absolute
+    top: 0
+    width: 100%
 
 .btn
     +font-size(26)
