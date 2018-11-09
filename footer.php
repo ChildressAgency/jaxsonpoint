@@ -2,6 +2,13 @@
     </main>
 
     <footer class="footer">
+        <div class="footer__partners">
+            <?php if( have_rows( 'footer_partners', 'option' ) ): while( have_rows( 'footer_partners', 'option' ) ): the_row(); ?>
+                <?php $image = get_sub_field( 'image' ); ?>
+                <div class="footer__partner"><?php if( get_sub_field( 'link' ) ) echo '<a href="' . the_sub_field( 'link' ) . '">'; ?><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php if( get_sub_field( 'link' ) ) echo '</a>'; ?></div>
+            <?php endwhile; endif; ?>
+        </div>
+
         <div class="footer__info">
             <div class="footer__contact">
                 <h3 class="footer__heading">Contact</h3>

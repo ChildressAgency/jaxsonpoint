@@ -526,7 +526,23 @@ div {
   color: #fff;
   display: flex;
   flex-direction: column;
-  padding: 30px 0;
+  padding-bottom: 30px;
+}
+.footer__partners {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  padding: 60px 30px;
+  width: 100%;
+}
+.footer__partner {
+  margin-bottom: 30px;
+}
+.footer__partner:last-of-type {
+  margin-bottom: 0;
 }
 .footer__info {
   align-items: center;
@@ -669,6 +685,12 @@ div {
 
   .footer {
     align-items: flex-end;
+  }
+  .footer__partners {
+    flex-direction: row;
+  }
+  .footer__partner {
+    margin-bottom: 0;
   }
   .footer__info {
     flex-direction: row;
