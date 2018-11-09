@@ -72,4 +72,5 @@
 	include "functions/custom-nav-walker.php";
 	include "functions/button-shortcode.php";
 	include "functions/bigtext-shortcode.php";
+	include "functions/medtext-shortcode.php";
 ?>
