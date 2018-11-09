@@ -186,6 +186,13 @@ div
         transform: translateX(-50%)
         width: 100%
 
+    &--alt
+        color: $color-text-dark
+
+        &::after
+            display: none
+
+
 .bigtext
     @extend %font-minion-pro
     font-size: 3em
@@ -241,12 +248,6 @@ div
     display: grid
     grid-gap: 30px 15px
     grid-template-columns: 1fr
-
-    &__heading
-        color: $color-text-dark
-
-        &::after
-            display: none
 
     &__item
         display: flex
@@ -464,6 +465,26 @@ div
     align-items: center
     display: flex
     justify-content: center
+
+.recognition
+    align-items: flex-start
+    display: flex
+    flex-direction: column
+
+    &__image
+        flex: 3
+        margin-bottom: 30px
+        width: 100%
+
+    &__info
+        flex: 2
+
+    &__name
+        +font-size(36)
+        margin-top: -.4em
+
+    &__text
+        +font-size(26)
 
 
 ///////////////////////////////////////////////////////////////////////////////
