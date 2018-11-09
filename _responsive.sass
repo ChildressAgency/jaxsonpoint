@@ -10,13 +10,11 @@
             max-width: 100%
 
     .hero
-        height: 500px
+        &--home
+            height: 500px
 
         &__text
             +font-size(60)
-
-            span
-                margin-left: 6rem
 
         &__content
             .btn
@@ -63,13 +61,12 @@
             padding-bottom: 5px
 
     .hero
-        height: 600px
+
+        &--home
+            height: 600px
 
         &__text
             +font-size(80)
-
-            span
-                margin-left: 12rem
 
         &__content
             .btn
@@ -126,9 +123,6 @@
     .hero
         &__text
             +font-size(100)
-
-            span
-                margin-left: 15rem
 
         &__content
             .btn
