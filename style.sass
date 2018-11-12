@@ -51,11 +51,20 @@ a
         text-decoration: underline
 
 img
+    height: auto
     max-width: 100%
 
 div
     background-position: center center
     background-size: cover
+
+ul
+    list-style-type: none
+
+    li
+        &::before
+            content: '-'
+            margin-right: 5px
 
 ///////////////////////////////////////////////////////////////////////////////
 // HEADER                                                                    //
@@ -112,6 +121,9 @@ div
         margin-right: 20px
         padding-bottom: 15px
         padding-top: 5px
+
+        &::before
+            display: none
 
 ///////////////////////////////////////////////////////////////////////////////
 // CONTENT                                                                   //
@@ -484,6 +496,61 @@ div
         margin-top: -.4em
 
     &__text
+        +font-size(26)
+
+.employment
+    background-position: top center
+    background-repeat: repeat
+
+    &__position
+        margin-bottom: 30px
+        padding-bottom: 30px
+        position: relative
+
+        &::after
+            background-color: #727272
+            bottom: 0
+            content: ' '
+            height: 1px
+            left: 0
+            position: absolute
+            width: 100%
+
+    &__info
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+    &__text
+        @extend %font-helvetica-thin
+        +font-size(20)
+        flex: 1
+        position: relative
+
+        &::after
+            background-color: #727272
+            bottom: 0
+            content: ' '
+            display: none
+            height: 1px
+            left: 0
+            position: absolute
+            width: 100%
+
+        li
+            margin-bottom: 15px
+
+    &__image
+        align-self: flex-start
+        flex: 1
+        width: 100%
+
+    &__upper
+        @extend %font-minion-pro
+        +font-size(32)
+
+    &__lower
+        @extend %font-helvetica
         +font-size(26)
 
 
