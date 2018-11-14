@@ -553,6 +553,83 @@ ul
         @extend %font-helvetica
         +font-size(26)
 
+.projects
+    @extend %font-helvetica
+    display: grid
+    grid-gap: 60px
+    grid-template-columns: 1fr
+
+    &::after
+        display: none
+
+    &__image
+        width: 100%
+
+    &__title
+        +font-size(20)
+        margin-bottom: 15px
+        padding-bottom: 15px
+        position: relative
+
+        &::after
+            background-color: $color-primary
+            bottom: 0
+            content: ' '
+            height: 2px
+            left: 0
+            position: absolute
+            width: 80%
+
+    &__location
+        +font-size(20)
+        color: $color-text-grey
+
+    &__description
+        +font-size(18)
+
+.view-by-category
+    @extend %font-open-sans-semibold
+    +font-size(26)
+
+    &__toggle
+        cursor: pointer
+        padding-bottom: 15px
+        position: relative
+
+        &::after
+            background-color: $color-primary
+            bottom: 0
+            content: ' '
+            height: 2px
+            position: absolute
+            right: 0
+            width: 90%
+
+        .fas
+            color: $color-primary
+
+    &__list
+        +font-size(20)
+        margin-bottom: 30px
+        margin-top: 15px
+        max-height: 0
+        overflow: hidden
+        text-align: center
+        transition: .3s max-height ease
+
+        li
+            list-style: none
+
+            &::before
+                display: none
+
+            a
+                color: $color-black
+
+                &:hover
+                    color: $color-primary
+                    text-decoration: none
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // FOOTER                                                                    //
