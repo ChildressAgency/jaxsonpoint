@@ -87,34 +87,66 @@ $(document).ready(function(){
     });
 
 
-
-
     /**
-     * FEATURED TITLES
+     * PROJECTS TITLES
      *
-     * Normalize the height of the title field of all of the "featured project" boxes
+     * Normalize the height of the title field of all of the "Project" boxes
      */
+    $project_titles = $('.projects__title');
     $featured_titles = $('.featured-slider__title');
 
     // run at resize
     $( window ).resize(function() {
-        $.fn.setHeadingHeight(0);   
+        $.fn.setHeadingHeight($project_titles, 0);   
+        $.fn.setHeadingHeight($featured_titles, 0);   
     });  
 
-    $.fn.setHeadingHeight = function(height) {
+    $.fn.setHeadingHeight = function(titles, height) {
 
         // reset to auto or else we can't check height
-        $($featured_titles).css({ 'height': 'auto' });
+        $(titles).css({ 'height': 'auto' });
 
         // get highest value
-        $($featured_titles).each(function(i, obj) {    
+        $(titles).each(function(i, obj) {    
             height = Math.max(height, $(obj).outerHeight()) 
         });
 
         // set new height
-        $($featured_titles).css({ 'height': height + 'px' });    
+        $(titles).css({ 'height': height + 'px' });    
     }
 
     // run at load
-    $.fn.setHeadingHeight(0);
+    $.fn.setHeadingHeight($project_titles, 0);
+    $.fn.setHeadingHeight($featured_titles, 0);
+
+
+
+
+
+
+    /**
+     * PROJECTS CATEGORY TOGGLE
+     *
+     * Toggle the product categories dropdown
+     */
+    $cat_toggle = $( '.view-by-category' ).find( '.view-by-category__toggle' );
+    $cat_list = $( '.view-by-category' ).find( '.view-by-category__list' );
+    $cat_list_height = 0;
+
+    $cat_toggle.click(function(){
+            $cat_list_height = 0;
+            $cat_list.children().each(function(){
+                $cat_list_height += $( this ).outerHeight();
+            });
+
+        if( $cat_toggle.hasClass( '.view-by-category__open' ) ){
+            $cat_toggle.removeClass( '.view-by-category__open' );
+            $cat_toggle.find( '.fas' ).removeClass( 'fa-angle-up' ).addClass( 'fa-angle-down' );
+            $cat_list.css( 'max-height', '0' );
+        } else {
+            $cat_toggle.addClass( '.view-by-category__open' );
+            $cat_toggle.find( '.fas' ).removeClass( 'fa-angle-down' ).addClass( 'fa-angle-up' );
+            $cat_list.css( 'max-height', $cat_list_height + 'px' );
+        }
+    });
 });
