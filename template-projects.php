@@ -18,7 +18,7 @@ get_header(); ?>
                 <?php 
 
                 $args = array(
-                    'taxonomy'  => 'category',
+                    'taxonomy'  => 'project-category',
                     'orderby'   => 'name',
                     'order'     => 'ASC'
                 );

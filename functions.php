@@ -44,7 +44,9 @@
 		
 		wp_enqueue_script( 'jaxson-script' );
 		wp_enqueue_script( 'slick-script' );
-		wp_enqueue_script( 'reload-projects' );
+
+		if( is_page_template( 'template-projects.php' ) || is_page_template( 'template-project-category.php' ) )
+			wp_enqueue_script( 'reload-projects' );
 
 		$params = array(
 			'ajaxurl' 				=> admin_url( 'admin-ajax.php' ),
@@ -101,12 +103,29 @@
 				),
 				'public' 			=> true,
 				'has_archive' 		=> false,
-				'taxonomies'		=> array( 'category' ),
+				'taxonomies'		=> array( 'project-category' ),
 				'supports'			=> array( 'thumbnail', 'title', 'revisions' )
 			)
 		);
 	}
 	add_action( 'init', 'create_post_type_news' );
+
+	// Create project category taxonomy
+	function projects_taxonomy() {
+		register_taxonomy(
+			'project-category',
+			'projects',
+			array(
+				'labels' 			=> array(
+					'name'			=> _x( 'Categories', 'taxonomy general name' ),
+					'singular_name'	=> _x( 'Category', 'taxonomy singular name' )
+				),
+				'hierarchical'		=> true,
+				'rewrite'			=> array( 'slug' => 'project-category' )
+			)
+		);
+	}
+	add_action( 'init', 'projects_taxonomy' );
 
 	include "functions/custom-nav-walker.php";
 	include "functions/button-shortcode.php";
