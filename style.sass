@@ -630,6 +630,76 @@ ul
                     color: $color-primary
                     text-decoration: none
 
+.project
+    margin-bottom: 60px
+
+    &__title
+        @extend %font-open-sans
+        +font-size(40)
+        margin-bottom: 0
+        text-align: center
+
+    &__location
+        @extend %font-helvetica-thin
+        +font-size(36)
+        color: $color-text-grey
+        margin-bottom: 30px
+        text-align: center
+
+    &__gallery
+        display: grid
+        grid-gap: 15px
+        grid-template-columns: 1fr
+        width: 100%
+
+
+    &__image
+        display: flex
+
+        &--tall
+            grid-row: span 2
+
+        &--wide
+            grid-column: span 2
+
+        img
+            width: 100%
+
+    &__subtext
+        @extend %font-helvetica
+        +font-size(18)
+        color: $color-text-grey
+        margin-bottom: 15px
+        padding-bottom: 15px
+        position: relative
+
+        &::after
+            background-color: $color-text-grey
+            bottom: 0
+            content: ' '
+            height: 1px
+            left: 0
+            position: absolute
+            width: 300px
+
+    &__description
+        @extend %font-helvetica
+        +font-size(20)
+
+.breadcrumbs
+    @extend %font-open-sans-semibold
+    +font-size(20)
+    background-color: $color-dark
+    color: $color-white
+    padding: 10px 20px
+
+    &__link
+        color: $color-white
+
+        &:hover
+            color: $color-primary
+            text-decoration: none
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // FOOTER                                                                    //
