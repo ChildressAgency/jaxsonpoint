@@ -39,13 +39,14 @@ get_header(); ?>
     </div>
 
     <div class="container">
-        <?php 
-
+        <?php
+        
         $cat = get_field( 'category' );
         
         $args = array(
             'post_type'         => 'projects',
             'post_status'       => 'published',
+            'posts_per_page'    => 2,
             'tax_query'         => array(
                 array(
                     'taxonomy'  => 'project-category',
@@ -57,36 +58,38 @@ get_header(); ?>
         
         $query = new WP_Query( $args );
         
-        if( $query->have_posts() ){
-            while( $query->have_posts() ){
-                $query->the_post(); ?>
-        
-                <div class="project">
-                    <h2 class="project__title"><?php the_title(); ?></h2>
-                    <h4 class="project__location"><?php the_field( 'location' ); ?></h4>
-
-                    <div class="project__gallery">
-                        <?php if( have_rows( 'images' ) ): while( have_rows( 'images' ) ): the_row(); ?>
-                            <?php 
-                            $image = get_sub_field( 'image' );
-                            $ratio = get_sub_field( 'aspect_ratio' );
-                            ?>
-                            <div class="project__image<?php if( $ratio == 'tall' || $ratio == 'wide' ) echo ' project__image--' . $ratio; ?>">
-                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                            </div>
-                        <?php endwhile; endif; ?>
+        if( $query->have_posts() ){ ?>
+            <div class="project-category" data-page="1" data-max-pages="<?php echo $query->max_num_pages; ?>" data-category="<?php echo $cat ?>">
+                <?php while( $query->have_posts() ){
+                    $query->the_post(); ?>
+            
+                    <div class="project">
+                        <h2 class="project__title"><?php the_title(); ?></h2>
+                        <h4 class="project__location"><?php the_field( 'location' ); ?></h4>
+            
+                        <div class="project__gallery">
+                            <?php if( have_rows( 'images' ) ): while( have_rows( 'images' ) ): the_row(); ?>
+                                <?php 
+                                $image = get_sub_field( 'image' );
+                                $ratio = get_sub_field( 'aspect_ratio' );
+                                ?>
+                                <div class="project__image<?php if( $ratio == 'tall' || $ratio == 'wide' ) echo ' project__image--' . $ratio; ?>">
+                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                </div>
+                            <?php endwhile; endif; ?>
+                        </div>
+            
+                        <div class="project__subtext">
+                            <?php if( get_field( 'owner' ) ): ?>Owner: <?php the_field( 'owner' ); ?><?php endif; ?>
+                            <?php if( get_field( 'owner' ) && get_field( 'gc' ) ): ?><br /><?php endif; ?>
+                            <?php if( get_field( 'gc' ) ): ?>GC: <?php the_field( 'gc' ); ?><?php endif; ?>
+                        </div>
+            
+                        <p class="project__description"><?php the_field( 'description' ); ?></p>
                     </div>
-
-                    <div class="project__subtext">
-                        <?php if( get_field( 'owner' ) ): ?>Owner: <?php the_field( 'owner' ); ?><?php endif; ?>
-                        <?php if( get_field( 'owner' ) && get_field( 'gc' ) ): ?><br /><?php endif; ?>
-                        <?php if( get_field( 'gc' ) ): ?>GC: <?php the_field( 'gc' ); ?><?php endif; ?>
-                    </div>
-
-                    <p class="project__description"><?php the_field( 'description' ); ?></p>
-                </div>
-            <?php }
-        } ?>
+                <?php } ?>
+            </div>
+        <?php } ?>
     </div>
 
 </div>

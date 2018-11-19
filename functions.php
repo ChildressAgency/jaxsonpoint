@@ -1,11 +1,11 @@
 <?php
 
 	// display template file in footer
-	add_action('wp_footer', 'show_template');
-	function show_template() {
-		global $template;
-		print_r($template);
-	}
+	// add_action( 'wp_footer', 'show_template' );
+	// function show_template() {
+	// 	global $template;
+	// 	print_r( $template );
+	// }
 
 	// load jquery
 	function jquery_cdn(){
@@ -41,18 +41,29 @@
 			'', 
 			true
 		);
+		wp_register_script(
+			'load-next-project-category', 
+			'/wp-content/themes/jaxsonpoint/js/load-next-project-category.js', 
+			array('jquery'), 
+			'', 
+			true
+		);
 		
 		wp_enqueue_script( 'jaxson-script' );
 		wp_enqueue_script( 'slick-script' );
 
-		if( is_page_template( 'template-projects.php' ) || is_page_template( 'template-project-category.php' ) )
+		if( is_page_template( 'template-projects.php' ) )
 			wp_enqueue_script( 'reload-projects' );
+
+		if( is_page_template( 'template-project-category.php' ) )
+			wp_enqueue_script( 'load-next-project-category' );
 
 		$params = array(
 			'ajaxurl' 				=> admin_url( 'admin-ajax.php' ),
 			'nonce'					=> wp_create_nonce( 'jaxson-nonce' ),
 		);
 		wp_localize_script( 'reload-projects', 'ajaxParams', $params);
+		wp_localize_script( 'load-next-project-category', 'ajaxParams', $params);
 	}
 	add_action('wp_enqueue_scripts', 'jaxson_scripts', 100);
 	
@@ -132,4 +143,5 @@
 	include "functions/bigtext-shortcode.php";
 	include "functions/medtext-shortcode.php";
 	include "functions/reload-projects.php";
+	include "functions/load-next-project-category.php";
 ?>
