@@ -12,6 +12,7 @@ body
     @extend %font-minion-pro
     +font-size(16)
     line-height: 1.5
+    overflow-x: hidden
 
 h1,
 h2,
@@ -214,7 +215,8 @@ ul
         display: table
 
 .section-heading
-    +font-size(50)
+    // +font-size(50)
+    font-size: 15vw
     margin-bottom: 30px
     position: relative
     text-align: center
@@ -266,8 +268,9 @@ ul
 
     &__text
         @extend %font-open-sans-semibold
-        +font-size(55)
+        // +font-size(55)
         color: $color-white
+        font-size: 12vw
         text-align: center
 
     &__content
@@ -276,7 +279,6 @@ ul
         display: flex
         height: 100%
         justify-content: center
-        padding: 30px
         width: 100%
 
     &--home
