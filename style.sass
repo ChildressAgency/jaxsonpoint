@@ -71,6 +71,9 @@ ul
 ///////////////////////////////////////////////////////////////////////////////
 
 .header
+    padding-bottom: 30px
+    padding-top: 30px
+
     &__brand
         text-align: center
 
@@ -124,6 +127,34 @@ ul
 
         &::before
             display: none
+
+    &__drop-menu
+        background-color: $color-black
+        display: none
+        margin-top: 40px
+        padding: 15px 30px
+        position: absolute
+        z-index: 99
+
+        &:hover
+            display: block
+
+        &::before
+            content: ' '
+            height: 45px
+            left: 0
+            position: absolute
+            top: -45px
+            width: 100%
+
+    &__drop-item
+        @extend %font-helvetica
+        color: $color-white
+        display: block
+        margin-bottom: 5px
+
+        &:last-of-type
+            margin-bottom: 0
 
 ///////////////////////////////////////////////////////////////////////////////
 // CONTENT                                                                   //

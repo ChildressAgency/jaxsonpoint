@@ -29,7 +29,7 @@
 <body>
     
     <header class="header">
-        <div class="section">
+        <!-- <div class="section"> -->
             <div class="container container--fluid">
                 <div class="header__brand">
                     <?php $logo = get_field( 'header_logo', 'option' ); ?>
@@ -50,8 +50,8 @@
                     </div>
                 </nav>
             </div>
-        </div>
-        <div class="header__separator"></div>
+        <!-- </div> -->
     </header>
+    <div class="header__separator"></div>
 
     <main>

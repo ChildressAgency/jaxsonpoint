@@ -17,11 +17,11 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
 
         // if the current menu item has a parent, then it is a dropdown item
         if( $parent ){
-            $output .= "<a class=\"navbar__dropdown-item";
+            $output .= "<a class=\"navbar__drop-item";
 
             // if this item goes to this page, then highlight it
-            // if( $objectID == $pageID )
-            //     $output .= " active";
+            if( $objectID == $pageID )
+                $output .= " active";
 
             $output .= "\" href=\"" . $permalink . "\">";
             $output .= $title;
@@ -31,11 +31,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
 
             // if this item has children, then it is a dropdown menu
             if( $hasChildren )
-                $output .= " dropdown";
-
-            // if this item goes to this page, then highlight it
-            if( $objectID == $pageID )
-                $output .= " active";
+                $output .= " navbar__drop";
 
             // close the tag
             $output .= "\">";
@@ -43,7 +39,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
 
             // if this item is a dropdown menu, it needs some extra info
             if( $hasChildren ){
-                $output .= "<a href=\"#\" class=\"nav-link dropdown-toggle\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">";
+                $output .= "<a href=\"" . $permalink . "\" class=\"navbar__link navbar__drop-toggle\">";
             }
             else{
                 $output .= "<a href=\"" . $permalink . "\" class=\"navbar__link\">";
@@ -67,7 +63,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
             $indent = str_repeat( $t, $depth );
          
             // Default class.
-            $classes = array( 'dropdown-menu');
+            $classes = array( 'navbar__drop-menu');
          
             /**
              * Filters the CSS class(es) applied to a menu list element.
