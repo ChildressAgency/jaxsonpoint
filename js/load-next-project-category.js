@@ -1,9 +1,4 @@
 $(document).ready(function(){
-
-    $( '.project-category' ).on( 'click', '.project__image', function(){
-        search();
-        // $( this ).html('test');
-    });
     $pauseScrollLoad = false;
 
     $( window ).on( 'scroll', function(){
@@ -45,7 +40,7 @@ $(document).ready(function(){
                 },  
                 error: function(MLHttpRequest, textStatus, errorThrown)
                 {  
-                    alert(errorThrown);
+                    console.log( errorThrown );
                     $pauseScrollLoad = false;
                 }
             });
