@@ -13,14 +13,18 @@
             <div class="footer__contact">
                 <h3 class="footer__heading">Contact</h3>
                 <p>
-                    <?php echo get_field( 'address', 'option' ); ?>
-                    <?php if( get_field( 'phone', 'option' ) ): ?><br /><a href="tel:<?php echo get_field( 'phone', 'option' ); ?>"><?php echo get_field( 'phone', 'option' ); ?></a><?php endif; ?>
-                    <?php if( get_field( 'email', 'option' ) ): ?><br /><a href="mailto:<?php echo get_field( 'email', 'option' ); ?>"><?php echo get_field( 'email', 'option' ); ?></a><?php endif; ?>
+                    <?php if( get_field( 'footer_contact', 'option' ) ): ?><?php the_field( 'footer_contact', 'option' ); ?><?php endif; ?>
+                    <!-- <?php echo get_field( 'address', 'option' ); ?> -->
+                    <!-- <?php if( get_field( 'phone', 'option' ) ): ?><br /><a href="tel:<?php echo get_field( 'phone', 'option' ); ?>"><?php echo get_field( 'phone', 'option' ); ?></a><?php endif; ?>
+                    <?php if( get_field( 'email', 'option' ) ): ?><br /><a href="mailto:<?php echo get_field( 'email', 'option' ); ?>"><?php echo get_field( 'email', 'option' ); ?></a><?php endif; ?> -->
                     <?php if( get_field( 'facebook', 'option' ) ): ?><br /><a href="<?php echo get_field( 'facebook', 'option' ); ?>"><i class="fab fa-facebook-f"></i></a><?php endif; ?>
                 </p>
             </div>
+            <div class="footer__center">
+                <?php if( get_field( 'footer_center', 'option' ) ): ?><?php the_field( 'footer_center', 'option' ); ?><?php endif; ?>
+            </div>
             <div class="footer__logo">
-                <img src="http://dev.childressagency.com/jaxsonpoint/wp-content/uploads/2018/11/logo-decade-white.png" alt="over 10 years">
+                <?php if( get_field( 'footer_right', 'option' ) ): ?><?php the_field( 'footer_right', 'option' ); ?><?php endif; ?>
             </div>
         </div>
         <nav class="navbar footer__nav">

@@ -15,7 +15,7 @@ get_header(); ?>
             <?php if( have_rows( 'customers' ) ): while( have_rows( 'customers' ) ): the_row(); ?>
                 <div class="customer">
                     <?php $image = get_sub_field( 'image' ); ?>
-                    <a href="<?php the_sub_field( 'link' ); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
+                    <?php if( get_sub_field( 'link' ) ): ?><a href="<?php the_sub_field( 'link' ); ?>"><?php endif; ?><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /><?php if( get_sub_field( 'link' ) ): ?></a><?php endif; ?>
                 </div>
             <?php endwhile; endif; ?>
         </div>
