@@ -881,6 +881,12 @@ ul li::before {
   padding: 60px 30px;
   width: 100%;
 }
+.footer__partners .slick-track {
+  align-items: center;
+}
+.footer__partners .slick-slide {
+  margin: 0 15px;
+}
 .footer__partner {
   margin-bottom: 30px;
 }
