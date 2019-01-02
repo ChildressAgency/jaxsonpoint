@@ -30,10 +30,13 @@
     
     <header class="header">
         <!-- <div class="section"> -->
-            <div class="container container--fluid">
+            <!-- <div class="container container--fluid"> -->
                 <div class="header__brand">
                     <?php $logo = get_field( 'header_logo', 'option' ); ?>
                     <a href="<?php echo home_url(); ?>"><img src="<?php echo $logo['url']; ?>" alt="<?php if( $logo['alt'] ) echo $logo['alt']; else echo $logo['title']; ?>"></a>
+                </div>
+                <div class="header__text">
+                    <?php the_field( 'header_text', 'option' ); ?>
                 </div>
                 <nav class="navbar header__nav">
                     <button class="navbar__toggler" type="button" data-target="#main-menu">
@@ -49,9 +52,9 @@
                         ) ); ?>
                     </div>
                 </nav>
-            </div>
+            <!-- </div> -->
         <!-- </div> -->
     </header>
-    <div class="header__separator"></div>
+    <!-- <div class="header__separator"></div> -->
 
     <main>

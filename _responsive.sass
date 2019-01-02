@@ -1,3 +1,4 @@
+// sass-lint:disable function-name-format
 ///////////////////////////////////////////////////////////////////////////////
 // 576                                                                       //
 ///////////////////////////////////////////////////////////////////////////////
@@ -8,6 +9,20 @@
 
         &--fluid
             max-width: 100%
+
+    .header
+        display: grid
+        grid-template-columns: 1fr 1fr
+
+        &__text
+            align-items: center
+            display: flex
+            justify-content: right
+            margin: 0
+            text-align: right
+
+        &__nav
+            grid-column: span 2
 
     .hero
         &--home
@@ -56,6 +71,18 @@
     .header
         &__brand
             text-align: left
+
+        .navbar
+            &__item
+                border-right: 2px solid $color-primary
+                transform: skew(-20deg)
+
+                &:last-of-type
+                    border-right: 0
+                    padding-right: 30px
+
+            &__link
+                transform: skew(20deg)
 
     .navbar
         &__toggler

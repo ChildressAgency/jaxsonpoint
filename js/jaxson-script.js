@@ -90,29 +90,29 @@ $(document).ready(function(){
     /**
      * FEATURED SLIDER
      */
-    $( '.footer__partners' ).slick({
-        infinite:       true,
-        slidesToShow:   4,
-        slidesToScroll: 1,
-        autoplay:       true,
-        autoplaySpeed:  0,
-        speed:          3000,
-        cssEase:        "linear",
-        arrows:         false,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 3,
-                    speed: 2000
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: "unslick"
-            }
-        ]
-    });
+    // $( '.footer__partners' ).slick({
+    //     infinite:       true,
+    //     slidesToShow:   4,
+    //     slidesToScroll: 1,
+    //     autoplay:       true,
+    //     autoplaySpeed:  0,
+    //     speed:          3000,
+    //     cssEase:        "linear",
+    //     arrows:         false,
+    //     responsive: [
+    //         {
+    //             breakpoint: 992,
+    //             settings: {
+    //                 slidesToShow: 3,
+    //                 speed: 2000
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 768,
+    //             settings: "unslick"
+    //         }
+    //     ]
+    // });
 
 
     /**

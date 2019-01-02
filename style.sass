@@ -1,3 +1,4 @@
+// sass-lint:disable function-name-format
 @import _variables.sass
 @import _reset.sass
 
@@ -72,14 +73,20 @@ ul
 ///////////////////////////////////////////////////////////////////////////////
 
 .header
-    padding-bottom: 30px
     padding-top: 30px
 
     &__brand
+        padding: 0 15px
         text-align: center
 
         img
             max-width: 100%
+
+    &__text
+        @extend %font-helvetica-thin
+        margin-top: 15px
+        padding: 0 15px
+        text-align: center
 
     &__separator
         background-color: $color-primary
@@ -87,22 +94,32 @@ ul
         width: 100%
 
     &__nav
+        background-color: $color-dark
         margin-top: 30px
+        padding: 15px 0
 
     .navbar
+        &__item
+            margin: 0
+            padding: 0 15px
+
         &__link
             @extend %font-helvetica-thin
             +font-size(18)
-            color: $color-black
+            color: $color-white
+            display: block
+            position: relative
 
             &:hover
                 color: $color-primary
+                text-decoration: none
 
 .navbar
     &__toggler
         +font-size(30)
         background-color: transparent
         border: 0
+        color: $color-white
         cursor: pointer
         display: block
         margin-bottom: 15px
